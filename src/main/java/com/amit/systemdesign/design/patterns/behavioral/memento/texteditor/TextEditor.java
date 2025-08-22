@@ -11,4 +11,12 @@ public class TextEditor {
     public String getContent(){
         return this.content;
     }
+
+    public TextEditorMemento save(){
+        return new TextEditorMemento(this.content);
+    }
+
+    public void restore (TextEditorMemento memento){
+        content = memento.getContent();
+    }
 }

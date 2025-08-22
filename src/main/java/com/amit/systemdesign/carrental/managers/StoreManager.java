@@ -42,7 +42,7 @@ public class StoreManager {
         if (Objects.nonNull(store) && Objects.nonNull(existingStore)) {
             existingStore.setLocation(store.getLocation());
             existingStore.setReservations(store.getReservations());
-            existingStore.setVehicles(store.getVehicles());
+//            existingStore.setVehicles(store.getVehicles());
         }
     }
 }
