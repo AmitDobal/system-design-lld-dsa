@@ -7,14 +7,9 @@ import com.amit.systemdesign.design.patterns.behavioral.strategy.payment.strateg
 public class PaymentFactory {
 
     public static PaymentStrategy getPaymentStrategy(PaymentType paymentType) {
-        switch (paymentType) {
-            case DEBIT:
-                return DebitCardPayment.getInstance();
-            case CREDIT:
-                return CreditCardPayment.getInstance();
-            default:
-                throw new IllegalArgumentException("Unsupported  payment type: " + paymentType);
-        }
-
+        return switch (paymentType) {
+            case DEBIT -> DebitCardPayment.getInstance();
+            case CREDIT -> CreditCardPayment.getInstance();
+        };
     }
 }

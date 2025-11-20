@@ -14,7 +14,6 @@ public class EditorCaretaker {
     public void undo(TextEditor textEditor) {
         if (!history.empty()) {
             history.pop();
-
             textEditor.restore(history.peek());
         }
     }
